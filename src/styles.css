@@ -1,0 +1,344 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-display: "Cormorant Garamond", "Cormorant", serif;
+  --font-script: "Pinyon Script", cursive;
+  --font-sans: "Jost", "Inter", sans-serif;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-gold: var(--gold);
+  --color-gold-soft: var(--gold-soft);
+  --color-maroon: var(--maroon);
+  --color-midnight: var(--midnight);
+  --color-ember: var(--ember);
+  --radius-lg: 1rem;
+  --radius-md: 0.75rem;
+  --radius-sm: 0.5rem;
+}
+
+:root {
+  /* Royal cinematic palette */
+  --background: oklch(0.12 0.03 270);
+  --foreground: oklch(0.95 0.04 85);
+  --card: oklch(0.16 0.04 275);
+  --card-foreground: oklch(0.95 0.04 85);
+  --popover: oklch(0.14 0.04 275);
+  --popover-foreground: oklch(0.95 0.04 85);
+  --primary: oklch(0.82 0.14 82); /* gold */
+  --primary-foreground: oklch(0.15 0.04 275);
+  --secondary: oklch(0.22 0.05 275);
+  --secondary-foreground: oklch(0.95 0.04 85);
+  --muted: oklch(0.2 0.04 275);
+  --muted-foreground: oklch(0.75 0.05 80);
+  --accent: oklch(0.42 0.18 25); /* maroon */
+  --accent-foreground: oklch(0.98 0.02 85);
+  --destructive: oklch(0.55 0.22 27);
+  --destructive-foreground: oklch(0.98 0.01 0);
+  --border: oklch(0.82 0.14 82 / 0.22);
+  --input: oklch(0.82 0.14 82 / 0.18);
+  --ring: oklch(0.82 0.14 82 / 0.6);
+
+  --gold: oklch(0.82 0.14 82);
+  --gold-soft: oklch(0.88 0.1 85);
+  --maroon: oklch(0.38 0.18 22);
+  --midnight: oklch(0.12 0.05 270);
+  --ember: oklch(0.74 0.18 55);
+
+  --gradient-gold: linear-gradient(
+    135deg,
+    oklch(0.88 0.12 85),
+    oklch(0.72 0.16 65),
+    oklch(0.92 0.1 95)
+  );
+  --gradient-night: radial-gradient(
+    ellipse at top,
+    oklch(0.2 0.07 275) 0%,
+    oklch(0.08 0.03 270) 70%
+  );
+  --gradient-ember: radial-gradient(circle, oklch(0.85 0.18 60 / 0.6), transparent 70%);
+  --shadow-royal: 0 30px 80px -20px oklch(0.05 0.05 270 / 0.7), 0 0 60px oklch(0.82 0.14 82 / 0.15);
+  --shadow-glow: 0 0 40px oklch(0.82 0.14 82 / 0.35);
+  --shadow-deep: 0 50px 120px -30px oklch(0 0 0 / 0.8);
+}
+
+.dark {
+  color-scheme: dark;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+  ::selection {
+    background: oklch(0.82 0.14 82 / 0.35);
+    color: oklch(0.98 0.02 85);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display);
+  }
+  .font-script {
+    font-family: var(--font-script);
+  }
+
+  .text-gold {
+    background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 0 40px oklch(0.82 0.14 82 / 0.4);
+  }
+
+  .glow-gold {
+    box-shadow:
+      0 0 30px oklch(0.82 0.14 82 / 0.35),
+      inset 0 0 20px oklch(0.82 0.14 82 / 0.08);
+  }
+
+  .glass-royal {
+    background: linear-gradient(135deg, oklch(0.22 0.05 275 / 0.55), oklch(0.1 0.03 270 / 0.55));
+    backdrop-filter: blur(18px) saturate(140%);
+    -webkit-backdrop-filter: blur(18px) saturate(140%);
+    border: 1px solid oklch(0.82 0.14 82 / 0.22);
+    box-shadow: var(--shadow-royal);
+  }
+
+  .bg-night {
+    background: var(--gradient-night);
+  }
+  .bg-ember {
+    background: var(--gradient-ember);
+  }
+
+  .vignette::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(
+      ellipse at center,
+      transparent 40%,
+      oklch(0.05 0.03 270 / 0.85) 100%
+    );
+  }
+
+  .gold-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, oklch(0.82 0.14 82 / 0.7), transparent);
+  }
+
+  .ornament::before,
+  .ornament::after {
+    content: "❖";
+    display: inline-block;
+    color: oklch(0.82 0.14 82);
+    margin: 0 1rem;
+    font-size: 0.7em;
+    opacity: 0.7;
+    vertical-align: middle;
+  }
+
+  @keyframes ember-rise {
+    0% {
+      transform: translateY(0) translateX(0) scale(1);
+      opacity: 0;
+    }
+    20% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-120vh) translateX(var(--drift, 30px)) scale(0.3);
+      opacity: 0;
+    }
+  }
+  .animate-ember {
+    animation: ember-rise linear infinite;
+  }
+
+  @keyframes petal-fall {
+    0% {
+      transform: translateY(-10vh) translateX(0) rotate(0deg);
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(110vh) translateX(var(--drift, 80px)) rotate(720deg);
+      opacity: 0;
+    }
+  }
+  .animate-petal {
+    animation: petal-fall linear infinite;
+  }
+
+  @keyframes diya-flicker {
+    0%,
+    100% {
+      opacity: 0.9;
+      transform: scale(1);
+      filter: blur(0px);
+    }
+    25% {
+      opacity: 1;
+      transform: scale(1.06);
+    }
+    50% {
+      opacity: 0.85;
+      transform: scale(0.98);
+    }
+    75% {
+      opacity: 1;
+      transform: scale(1.04);
+    }
+  }
+  .animate-flicker {
+    animation: diya-flicker 2.4s ease-in-out infinite;
+  }
+
+  @keyframes breath {
+    0%,
+    100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.03);
+    }
+  }
+  .animate-breath {
+    animation: breath 6s ease-in-out infinite;
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+  .text-shimmer {
+    background: linear-gradient(
+      90deg,
+      oklch(0.72 0.14 75) 0%,
+      oklch(0.95 0.12 90) 50%,
+      oklch(0.72 0.14 75) 100%
+    );
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: shimmer 6s linear infinite;
+  }
+
+  @keyframes spin-slow {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  .animate-spin-slow {
+    animation: spin-slow 18s linear infinite;
+  }
+
+  @keyframes star-twinkle {
+    0%,
+    100% {
+      opacity: 0.2;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+  .animate-twinkle {
+    animation: star-twinkle 3s ease-in-out infinite;
+  }
+}
+
+/* Keep the Engagement couple in frame across banner sizes. */
+.engagement-image {
+  object-position: center 62%;
+}
+@media (min-width: 640px) {
+  .engagement-image {
+    object-position: center 57%;
+  }
+}
+
+
+/* Small gold seams connect the content sections without adding vertical bulk. */
+.wedding-content-section::before {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  inset: 0 8% auto;
+  height: 1px;
+  pointer-events: none;
+  background: linear-gradient(90deg, transparent, oklch(0.82 0.14 82 / 0.28), transparent);
+}
+
+/* A visible, touch-friendly track keeps the Polaroid gallery easy to browse. */
+.gallery-strip {
+  scrollbar-width: thin;
+  scrollbar-color: oklch(0.72 0.13 78 / 0.75) oklch(0.22 0.05 275 / 0.85);
+  -webkit-overflow-scrolling: touch;
+}
+.gallery-strip::-webkit-scrollbar { height: 7px; }
+.gallery-strip::-webkit-scrollbar-track { background: oklch(0.22 0.05 275 / 0.85); border-radius: 999px; }
+.gallery-strip::-webkit-scrollbar-thumb { background: linear-gradient(90deg, oklch(0.65 0.15 62), oklch(0.88 0.12 85)); border-radius: 999px; }
+
+.music-record-playing { animation: music-record-spin 8s linear infinite; }
+.music-visualizer { display: flex; height: 17px; align-items: center; gap: 2px; }
+.music-visualizer i { display: block; width: 2px; height: 4px; border-radius: 99px; background: oklch(0.84 0.14 82); opacity: 0.75; }
+.music-visualizer.is-playing i { animation: music-bar 760ms ease-in-out infinite alternate; }
+.music-visualizer.is-playing i:nth-child(2n) { animation-duration: 580ms; }
+.music-visualizer.is-playing i:nth-child(3n) { animation-duration: 920ms; }
+@keyframes music-record-spin { to { transform: rotate(360deg); } }
+@keyframes music-bar { from { height: 4px; opacity: 0.55; } to { height: 16px; opacity: 1; } }

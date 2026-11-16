@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" fill="none">
+  <defs>
+    <linearGradient id="dusk" x2="0" y2="1"><stop stop-color="#241b33"/><stop offset=".56" stop-color="#572d31"/><stop offset="1" stop-color="#170e18"/></linearGradient>
+    <linearGradient id="stone" x2="0" y2="1"><stop stop-color="#d9b47a"/><stop offset="1" stop-color="#704331"/></linearGradient>
+    <radialGradient id="fire"><stop stop-color="#fff5a4"/><stop offset=".25" stop-color="#ffb636"/><stop offset=".65" stop-color="#e85b1d" stop-opacity=".7"/><stop offset="1" stop-color="#cf4c1c" stop-opacity="0"/></radialGradient>
+    <pattern id="carve" width="52" height="52" patternUnits="userSpaceOnUse"><path d="M26 4c-15 10-15 34 0 44 15-10 15-34 0-44zM4 26h44" stroke="#f1d092" stroke-opacity=".25" stroke-width="2"/></pattern>
+  </defs>
+  <path fill="url(#dusk)" d="M0 0h1600v1000H0z"/><circle cx="800" cy="650" r="470" fill="url(#fire)" opacity=".8"/>
+  <path d="M0 750q400-220 800 0t800 0v250H0z" fill="#160e18" opacity=".8"/>
+  <path d="M240 690V280h115v410m890 0V280h115v410M350 690V350h100v340m700 0V350h100v340" fill="url(#stone)" stroke="#e8ca8d" stroke-width="9"/>
+  <path d="M220 290q580-440 1160 0M310 360q490-330 980 0M380 410q420-250 840 0" stroke="url(#stone)" stroke-width="26"/>
+  <path d="M220 290q580-440 1160 0M310 360q490-330 980 0" stroke="url(#carve)" stroke-width="26"/>
+  <path d="M170 690h1260v70H170zM270 250h1060v45H270z" fill="url(#stone)" stroke="#f1d092" stroke-width="5"/>
+  <path d="M0 840h1600M110 790h1380" stroke="#cf9b55" stroke-opacity=".45" stroke-width="5"/>
+  <g fill="#c74936"><path d="M340 250q24 45 0 68-24-23 0-68m920 0q24 45 0 68-24-23 0-68m-790 65q19 36 0 54-19-18 0-54m660 0q19 36 0 54-19-18 0-54"/></g>
+  <g stroke="#e9c77f" stroke-width="5" fill="#5b3127"><path d="M670 725h260l-28 85H698z"/><path d="M700 724q100-70 200 0"/><path d="M800 700c-65-58 7-95 0-150 50 53 72 99 0 150z" fill="url(#fire)" stroke="#ffce6a"/></g>
+  <ellipse cx="800" cy="742" rx="220" ry="150" fill="url(#fire)" opacity=".48"/>
+  <g stroke="#e7c477" stroke-width="5" fill="#522d27"><path d="M550 640h70l-12 24h-46zM980 640h70l-12 24h-46z"/><path d="M585 637q-30-42 0-70 30 28 0 70zm430 0q-30-42 0-70 30 28 0 70z" fill="#ffca59"/></g>
+  <g fill="#f7d88d" opacity=".76"><circle cx="625" cy="535" r="5"/><circle cx="975" cy="500" r="4"/><circle cx="1030" cy="580" r="5"/><circle cx="555" cy="480" r="4"/><circle cx="800" cy="480" r="5"/><circle cx="720" cy="560" r="4"/></g>
+</svg>
