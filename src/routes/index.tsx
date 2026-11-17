@@ -91,7 +91,7 @@ function Index() {
         }
         image={haldi}
         alt="Haldi ceremony"
-        contentPosition="event"
+        contentPosition="event-bottom-left"
         overlay="from-background/40 via-background/10 to-background"
       />
       <SceneSection
@@ -107,7 +107,7 @@ function Index() {
         }
         image={engagementPoster}
         alt="Abhishek and Aditi exchanging rings at their engagement celebration beneath a flower-decorated Indian palace arch"
-        contentPosition="event"
+        contentPosition="event-bottom-left"
       />
       <SceneSection
         id="sangeet"
@@ -122,7 +122,7 @@ function Index() {
         }
         image={sangeet}
         alt="Family and friends dancing at an Indian Sangeet celebration"
-        contentPosition="event"
+        contentPosition="event-bottom-left"
       />
       <SceneSection
         id="lagan"
@@ -137,7 +137,7 @@ function Index() {
         }
         image={laganImage}
         alt="Lagan ceremony mandap with sacred fire and floral decorations"
-        contentPosition="event"
+        contentPosition="event-bottom-left"
       />
       <SceneSection
         id="baraat"
@@ -152,7 +152,7 @@ function Index() {
         }
         image={baraatImage}
         alt="Groom riding a decorated white horse with family and musicians in the Baraat procession"
-        contentPosition="event"
+        contentPosition="event-bottom-left"
         imagePosition="center 48%"
       />
       <Timeline />
