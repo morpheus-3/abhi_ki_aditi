@@ -24,14 +24,15 @@ export function SceneSection({
   children?: ReactNode;
   posterMode?: boolean;
   imagePosition?: string;
-  contentPosition?: "center" | "upper" | "event";
+  contentPosition?: "center" | "upper" | "event" | "event-bottom-left";
   overlay?: string;
 }) {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
   const y = useTransform(scrollYProgress, [0, 1], ["-3%", "3%"]);
   const scale = useTransform(scrollYProgress, [0, 1], [1.04, 1.08]);
-  const isEventBanner = contentPosition === "event";
+  const isEventBanner = contentPosition === "event" || contentPosition === "event-bottom-left";
+  const isBottomLeftEvent = contentPosition === "event-bottom-left";
   return (
     <section
       id={id}
@@ -65,14 +66,26 @@ export function SceneSection({
             />
             <div className={"absolute inset-0 bg-gradient-to-b " + overlay} />
             {isEventBanner && (
-              <div className="absolute inset-y-0 left-0 w-full bg-gradient-to-r from-background/75 via-background/35 to-transparent sm:w-[78%]" />
+              <div
+                className={
+                  "absolute inset-y-0 left-0 w-full bg-gradient-to-r to-transparent sm:w-[78%] " +
+                  (isBottomLeftEvent
+                    ? "from-background/85 via-background/45"
+                    : "from-background/75 via-background/35")
+                }
+              />
             )}
           </motion.div>
           {isEventBanner ? (
-            <div className="relative z-10 mx-auto flex min-h-[78svh] max-w-6xl items-start justify-start px-5 pb-10 pt-20 sm:px-6 sm:pt-24 md:min-h-[84svh] md:px-12 md:pt-28">
-              <Reveal className="w-fit max-w-[min(90vw,28rem)]">
+            <div className={
+              "relative z-10 mx-auto flex min-h-[78svh] max-w-6xl px-5 sm:px-6 md:min-h-[84svh] md:px-12 " +
+              (isBottomLeftEvent
+                ? "items-end justify-start pb-[calc(env(safe-area-inset-bottom)+2rem)] pt-24 sm:pb-12 md:pb-16"
+                : "items-start justify-start pb-10 pt-20 sm:pt-24 md:pt-28")
+            }>
+              <Reveal className={isBottomLeftEvent ? "w-fit max-w-[min(88vw,25rem)]" : "w-fit max-w-[min(90vw,28rem)]"}>
                 {eyebrow && (
-                  <p className="font-script text-xl text-gold/95 sm:text-2xl md:text-3xl">
+                  <p className="font-script text-xl leading-tight text-gold/95 sm:text-2xl md:text-3xl">
                     {eyebrow}
                   </p>
                 )}

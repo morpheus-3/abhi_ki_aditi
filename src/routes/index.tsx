@@ -76,7 +76,7 @@ function Index() {
         }
         image={mehndiImage}
         alt="Abhishek and Aditi in green wedding attire during their Mehndi celebration"
-        contentPosition="event"
+        contentPosition="event-bottom-left"
       />
       <SceneSection
         id="haldi"

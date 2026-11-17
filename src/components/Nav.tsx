@@ -180,7 +180,7 @@ export function Nav() {
       <motion.div
         initial={false}
         animate={{ opacity: 1, y: 0, scale: 1 }}
-        className="fixed bottom-4 right-3 z-[70] sm:bottom-6 sm:right-6"
+        className="fixed bottom-[calc(env(safe-area-inset-bottom)+1rem)] left-[calc(env(safe-area-inset-left)+0.75rem)] right-auto z-[70] sm:bottom-[calc(env(safe-area-inset-bottom)+1.5rem)] sm:left-[calc(env(safe-area-inset-left)+1.5rem)]"
       >
         <button
           type="button"
