@@ -1,13 +1,16 @@
 import { CalendarDays, MapPin } from "lucide-react";
 
-type EventDetailsProps = { date: string; venue: string; mapsUrl?: string };
+type EventDetailsProps = { date: string; dateSuffix?: string; venue: string; mapsUrl?: string };
 
-export function EventDetails({ date, venue, mapsUrl }: EventDetailsProps) {
+export function EventDetails({ date, dateSuffix, venue, mapsUrl }: EventDetailsProps) {
   return (
     <div className="space-y-2 text-sm leading-relaxed text-foreground sm:text-base">
       <p className="flex items-start gap-2.5">
         <CalendarDays aria-hidden="true" className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
-        <span>{date}</span>
+        <span className="inline-flex flex-wrap items-baseline gap-x-1.5">
+          <span className="whitespace-nowrap">{date}</span>
+          {dateSuffix && <span className="whitespace-nowrap font-medium text-gold">{dateSuffix}</span>}
+        </span>
       </p>
       <p className="flex items-start gap-2.5">
         <MapPin aria-hidden="true" className="mt-0.5 h-4 w-4 shrink-0 text-gold" />

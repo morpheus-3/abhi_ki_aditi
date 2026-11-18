@@ -146,6 +146,7 @@ function Index() {
         subtitle={
           <EventDetails
             date="12 December 2026"
+            dateSuffix="(Dinner)"
             venue="Ranbanka Marriage Garden, Vaishali Nagar"
             mapsUrl="https://www.google.com/maps/place/Ranbanka+Marriage+Garden/@26.9220277,75.7327245,17z/data=!3m1!4b1!4m6!3m5!1s0x396db35da02a132f:0xc5c982156c4dcd0b!8m2!3d26.9220277!4d75.7352994!16s%2Fg%2F1hjh7hcwl?entry=ttu"
           />
